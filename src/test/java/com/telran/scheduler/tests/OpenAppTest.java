@@ -11,7 +11,7 @@ public class OpenAppTest extends TestBase{
   "appPackage": "com.example.svetlana.scheduler",
   "appActivity": ".presentation.splashScreen.SplashScreenActivity"
 }*/
-    @Test
+    @Test(enabled = false)
     public void testLaunchApp(){
         System.out.println("ok");
     }
