@@ -11,13 +11,13 @@ public class HelperBase {
         this.driver = driver;
     }
 
-    public void click(By locator) {
+    public void tap(By locator) {
         driver.findElement(locator).click();
     }
 
     public void type(By locator, String text) {
         if (text != null) {
-            click(locator);
+            tap(locator);
             driver.findElement(locator).clear();
             driver.findElement(locator).sendKeys(text);
         }
