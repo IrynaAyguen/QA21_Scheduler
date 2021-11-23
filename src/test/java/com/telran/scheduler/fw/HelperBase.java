@@ -23,4 +23,12 @@ public class HelperBase {
         }
     }
 
+    public void hideKeyboard() {
+        driver.hideKeyboard();
+    }
+
+    public boolean isElementPresent(By locator) {
+        return driver.findElements(locator).size() > 0;
+    }
+
 }

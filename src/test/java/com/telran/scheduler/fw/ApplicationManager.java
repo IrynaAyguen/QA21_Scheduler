@@ -6,11 +6,18 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
     AppiumDriver driver;
     DesiredCapabilities capabilities;
     UserHelper user;
+
+    EventHelper event;
+
+    public EventHelper getEvent() {
+        return event;
+    }
 
     public UserHelper getUser() {
         return user;
@@ -27,7 +34,9 @@ public class ApplicationManager {
         capabilities.setCapability("app", "C:/Tools/v.0.0.3.apk");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         user = new UserHelper(driver);
+        event = new EventHelper(driver);
     }
 
     public void stop() {
