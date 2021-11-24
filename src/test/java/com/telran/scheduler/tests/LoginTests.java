@@ -19,7 +19,8 @@ public class LoginTests extends TestBase {
 
     @Test
     public void registerPositiveTest(){
-
+        app.getUser().register();
+        Assert.assertTrue(app.getEvent().isCurrencyContainerPresent());
     }
 
 }
