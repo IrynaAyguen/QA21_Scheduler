@@ -11,9 +11,20 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
     AppiumDriver driver;
     DesiredCapabilities capabilities;
+
     UserHelper user;
 
     EventHelper event;
+    CurrencyHelper currency;
+    WageHelper wage;
+
+    public CurrencyHelper getCurrency() {
+        return currency;
+    }
+
+    public WageHelper getWage() {
+        return wage;
+    }
 
     public EventHelper getEvent() {
         return event;
@@ -37,6 +48,9 @@ public class ApplicationManager {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         user = new UserHelper(driver);
         event = new EventHelper(driver);
+        currency = new CurrencyHelper(driver);
+        wage = new WageHelper(driver);
+
     }
 
     public void stop() {

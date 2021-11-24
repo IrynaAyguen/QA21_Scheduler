@@ -17,4 +17,9 @@ public class LoginTests extends TestBase {
         Assert.assertTrue(app.getEvent().isErrorMessagePresent());
     }
 
+    @Test
+    public void registerPositiveTest(){
+
+    }
+
 }
